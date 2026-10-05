@@ -3,7 +3,8 @@ export const CONFIG = {
   center: [98.99, 18.79],
   zoom: 12.3,
 
-  thaiwater: 'https://api-v3.thaiwater.net/api/v1/thaiwater30/public',
+  // บนเซิร์ฟเวอร์จริงเรียกผ่าน proxy ที่มีแคช (api/tw.js) — ตอนพัฒนาบน localhost เรียกตรง
+  thaiwater: /^(localhost|127.0.0.1)$/.test(location.hostname) ? 'https://api-v3.thaiwater.net/api/v1/thaiwater30/public' : '/tw',
   openMeteo: 'https://api.open-meteo.com/v1/forecast',
   openMeteoArchive: 'https://archive-api.open-meteo.com/v1/archive',
   glofas: 'https://flood-api.open-meteo.com/v1/flood',
